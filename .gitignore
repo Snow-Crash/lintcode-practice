@@ -1,0 +1,14 @@
+**/Debug/
+*.exe
+**/stdafx.h
+**/stdafx.cpp
+**/.vs/
+*.vcxproj
+*.ipch
+*.opendb
+*.db
+*.sln
+**/targetver.h
+**/ReadMe.txt
+*.filters
+*.json
