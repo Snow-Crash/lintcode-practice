@@ -17,7 +17,7 @@ public:
 };
 
 
-class Solution {
+class Solution1 {
 public:
 	/**
 	* @param head: ListNode head is the head of the linked list
