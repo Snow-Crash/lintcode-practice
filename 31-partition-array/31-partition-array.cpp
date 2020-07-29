@@ -18,9 +18,6 @@ public:
         if (nums.size() == 0)
             return 0;
 
-        if (k > nums.size())
-            return -1;
-
         int i = 0;
         int j = nums.size() - 1;
 
