@@ -1,5 +1,6 @@
 // 35-reverse-linked-list.cpp : Defines the entry point for the console application.
 // https://www.lintcode.com/problem/reverse-linked-list/
+// https://leetcode.com/problems/reverse-linked-list/
 
 #include "stdafx.h"
 #include <vector>
@@ -47,6 +48,26 @@ ListNode* reverse(ListNode * head) {
 	return head;
 }
 
+class Solution {
+public:
+	ListNode* reverseList(ListNode* head) {
+
+		ListNode* prev = NULL;
+		ListNode* current = head;
+		ListNode* next = NULL;
+
+		while (current != NULL)
+		{
+			next = current->next;
+			current->next = prev;
+			prev = current;
+			current = next;
+		}
+
+		return prev;
+	}
+};
+
 int main()
 {
 	ListNode a, b, c, d, e;
@@ -62,7 +83,12 @@ int main()
 	d.next = &e;
 	e.next = NULL;
 
-	ListNode* head = reverse(&a);
+	// solution 1
+	//ListNode* head = reverse(&a);
+
+	// solution 2
+	Solution solution;
+	ListNode * reversed = solution.reverseList(&a);
 
     return 0;
 }
