@@ -116,6 +116,43 @@ public:
 		return dummy.next;
 	}
 };
+class Solution3 {
+public:
+	ListNode* reverseBetween(ListNode* head, int m, int n) {
+
+		ListNode dummy(-1);
+
+		dummy.next = head;
+
+		ListNode* start = &dummy;
+		ListNode* next = NULL;
+		ListNode* prev = NULL;
+		int i = 0;
+		for (; i < m; i++)
+		{
+			prev = start;
+			start = start->next;
+		}
+
+		ListNode* prev2 = NULL;
+		ListNode* current = start;
+
+		while (i <= n)
+		{
+			next = current->next;
+			current->next = prev2;
+			prev2 = current;
+			current = next;
+			i++;
+		}
+
+		start->next = current;
+
+		prev->next = prev2;
+
+		return dummy.next;
+	}
+};
 
 int main()
 {
@@ -136,7 +173,7 @@ int main()
 
 	//test case 3, m = 1, n = 4
 
-	Solution2 solution;
+	Solution3 solution;
 
 	ListNode* head = solution.reverseBetween(&a, 1, 4);
 
