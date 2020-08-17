@@ -50,4 +50,19 @@ ListNode* reverseBetween(ListNode* head, int m, int n) {
 ```
 
 ## Note
+
 The linked list is 0 indexed, therefore add a dummy node as head. The dummy node also helps avoid corner cases.
+
+## Related Problems
+
+### Leetcode
+
+[206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+
+[92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)
+
+### Lintcode
+
+[35. Reverse Linked List](https://www.lintcode.com/problem/reverse-linked-list/description)
+
+[36. Reverse Linked List II](https://www.lintcode.com/problem/reverse-linked-list-ii/description)
