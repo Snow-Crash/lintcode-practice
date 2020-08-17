@@ -3,6 +3,9 @@
 // ref: https://www.cnblogs.com/grandyang/p/4293853.html
 
 #include <iostream>
+#include <stack>
+
+using namespace std;
 
 // Definition of TreeNode:
 class TreeNode {
@@ -59,18 +62,72 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    /**
+     * @param root: a TreeNode, the root of the binary tree
+     * @return: nothing
+     */
+    void flatten(TreeNode* root) {
+        // write your code here
+
+
+        if (root == NULL)
+            return;
+
+        stack<TreeNode*> s;
+
+        s.push(root);
+
+        TreeNode* head = new TreeNode(0);
+
+        TreeNode* prev = head;
+
+        while (s.empty() == false)
+        {
+            TreeNode* node = s.top();
+
+            s.pop();
+
+            prev->right = node;
+
+            if (node->right != NULL)
+            {
+                s.push(node->right);
+            }
+
+
+            if (node->left != NULL)
+            {
+                s.push(node->left);
+            }
+
+            node->left = NULL;
+            node->right = NULL;
+
+            prev = node;
+        }
+
+        root = head->right;
+
+    }
+};
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    TreeNode t1(1);
+    TreeNode t2(2);
+    TreeNode t3(3);
+    TreeNode t4(4);
+    TreeNode t5(5);
+    TreeNode t6(6);
+
+    t1.left = &t2;
+    t1.right = &t5;
+    t2.left = &t3;
+    t2.right = &t4;
+    t5.right = &t6;
+
+    Solution2 solution;
+    solution.flatten(&t1);
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
