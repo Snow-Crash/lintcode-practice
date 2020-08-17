@@ -1,22 +1,19 @@
 // 36-reverse-linked-list-ii.cpp : Defines the entry point for the console application.
-//
+// https://www.lintcode.com/problem/reverse-linked-list-ii/description
 
 #include "stdafx.h"
 
-class ListNode
-{
+class ListNode {
 public:
-
-	ListNode()
-	{
-		next = NULL;
-	}
-
 	int val;
 	ListNode* next;
+
+	ListNode(int val) {
+		this->val = val;
+		this->next = NULL;
+	}
 };
-
-
+ 
 class Solution1 {
 public:
 	/**
@@ -74,24 +71,74 @@ public:
 
 };
 
+class Solution2 {
+public:
+	/**
+	 * @param head: ListNode head is the head of the linked list
+	 * @param m: An integer
+	 * @param n: An integer
+	 * @return: The head of the reversed ListNode
+	 */
+	ListNode* reverseBetween(ListNode* head, int m, int n) {
+		// write your code here
+
+		ListNode dummy(-1);
+
+		dummy.next = head;
+
+		ListNode* start = &dummy;
+		ListNode* prev = NULL;
+		int i = 0;
+		for (; i < m; i++)
+		{
+			prev = start;
+			start = start->next;
+		}
+
+		ListNode* prev2 = start;
+		ListNode* current = start;
+		ListNode* next = start->next;
+
+		while (i < n)
+		{
+			current = next;
+			next = next->next;
+			current->next = prev2;
+			prev2 = current;
+			i++;
+		}
+
+		start->next = next;
+
+		if (prev != NULL)
+			prev->next = current;
+
+		return dummy.next;
+	}
+};
+
 int main()
 {
-	ListNode a;
-	ListNode b;
-	ListNode c;
-	ListNode d;
-	ListNode e;
+	// test case 1, m = 2, n = 4
+	ListNode a(1);
+	ListNode b(2);
+	ListNode c(3);
+	ListNode d(4);
+	ListNode e(5);
 
 	a.next = &b;
 	b.next = &c;
 	c.next = &d;
 	d.next = &e;
 
-	a.val = 1;
-	b.val = 2;
-	c.val = 3;
-	d.val = 4;
-	e.val = 5;
+	//test case 2, m = n = 1
+	ListNode a1(5);
+
+	//test case 3, m = 1, n = 4
+
+	Solution2 solution;
+
+	ListNode* head = solution.reverseBetween(&a, 1, 4);
 
     return 0;
 }
