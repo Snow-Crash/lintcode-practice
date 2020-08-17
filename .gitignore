@@ -13,3 +13,4 @@
 *.filters
 *.json
 *.user
+**/enc_temp_folder/
