@@ -1,5 +1,5 @@
-// 99-reorder-list.cpp : Defines the entry point for the console application.
-//
+// 143-99-reorder-list.cpp : Defines the entry point for the console application.
+// https://leetcode.com/problems/reorder-list/
 
 #include "stdafx.h"
 
@@ -16,11 +16,11 @@ public:
 	ListNode* next;
 };
 
-void reorderList(ListNode * head) {
+void reorderList(ListNode* head) {
 	// write your code here
 
-	ListNode * fast = head;
-	ListNode * slow = head;
+	ListNode* fast = head;
+	ListNode* slow = head;
 
 	if (head == NULL || head->next == NULL)
 		return;
@@ -31,14 +31,14 @@ void reorderList(ListNode * head) {
 		slow = slow->next;
 	}
 
-	ListNode * head2 = slow->next;
+	ListNode* head2 = slow->next;
 	slow->next = NULL;
 
 	// reverse second half
 
-	ListNode * prev = NULL;
-	ListNode * current = head2;
-	ListNode * next = NULL;
+	ListNode* prev = NULL;
+	ListNode* current = head2;
+	ListNode* next = NULL;
 
 	while (current != NULL)
 	{
@@ -49,8 +49,8 @@ void reorderList(ListNode * head) {
 	}
 
 	//prev will be the head of second ListNode
-	ListNode * p1 = head;
-	ListNode * p2 = prev;
+	ListNode* p1 = head;
+	ListNode* p2 = prev;
 
 	ListNode dummy;
 
@@ -96,6 +96,6 @@ int main()
 
 	reorderList(&a);
 
-    return 0;
+	return 0;
 }
 
