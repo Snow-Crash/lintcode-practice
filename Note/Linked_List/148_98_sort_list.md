@@ -3,7 +3,7 @@
 <https://leetcode.com/problems/sort-list/>
 <https://www.lintcode.com/problem/sort-list/description>
 
-# Solution
+## Solution
 
 ```cpp
 class Solution {
@@ -91,10 +91,8 @@ Use a fast point and a slow pointer.
 
 ### Leetcode
 
-
-
 ### Lintcode
 
-
 ## Reference
+
 <https://www.cnblogs.com/grandyang/p/4249905.html>

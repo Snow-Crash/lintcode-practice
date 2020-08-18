@@ -1,6 +1,8 @@
 # Reverse Linked List
 
-https://leetcode.com/problems/reverse-linked-list/
+<https://leetcode.com/problems/reverse-linked-list/>
+
+<https://www.lintcode.com/problem/reverse-linked-list/>
 
 ## Solution
 
@@ -29,7 +31,6 @@ ListNode* reverseList(ListNode* head) {
 
 ## Notes
 
-
 ## Related Problems
 
 ### Leetcode
@@ -43,7 +44,6 @@ ListNode* reverseList(ListNode* head) {
 [35. Reverse Linked List](https://www.lintcode.com/problem/reverse-linked-list/description)
 
 [36. Reverse Linked List II](https://www.lintcode.com/problem/reverse-linked-list-ii/description)
-
 
 ## Reference
 

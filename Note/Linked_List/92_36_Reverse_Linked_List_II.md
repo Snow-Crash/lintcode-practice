@@ -1,8 +1,10 @@
 # Reverse Linked List II
 
-https://leetcode.com/problems/reverse-linked-list-ii/solution/
+<https://leetcode.com/problems/reverse-linked-list-ii/solution/>
 
-# Solution
+<https://www.lintcode.com/problem/reverse-linked-list-ii/description>
+
+## Solution
 
 ```cpp
 class Solution {
