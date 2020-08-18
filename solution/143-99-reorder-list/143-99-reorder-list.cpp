@@ -1,8 +1,6 @@
 // 143-99-reorder-list.cpp : Defines the entry point for the console application.
 // https://leetcode.com/problems/reorder-list/
 
-#include "stdafx.h"
-
 class ListNode
 {
 public:
