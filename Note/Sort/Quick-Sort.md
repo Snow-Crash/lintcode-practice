@@ -175,7 +175,7 @@ In this case, nums[i] == nums[j] < pivot. i will increase by 1 and j remains unc
 3. nums[i] <= pivot is false, nums[j] >= pivot is true
 In this case, nums[i] == nums[j] > pivot. j will increase by 1, i remains unchanged.  Now values in [1, j-1] are not larger than pivot, values in [i, nums.size()-1] are larger than pivot (). j is still the boundary.
 Summary
-After the while loop stops, all values from 1 to j-1 are not larger than pivot, values from [j+1, nums.size()-1] are not less than pivot. j is the position where the pivot shoule be, nums[j] is not larger than pivot, therefore, after the while loop, no matter in what cases, it is necessary to swap nums[0] and nums[j]
+After the while loop stops, all values from 1 to j-1 are not larger than pivot, values from [j+1, nums.size()-1] are not less than pivot. j is the position where the pivot should be, nums[j] is not larger than pivot, therefore, after the while loop, no matter in what cases, it is necessary to swap nums[left] and nums[j]
 
 ## References
 

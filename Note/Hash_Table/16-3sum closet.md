@@ -4,6 +4,8 @@
 
 ## Summary
 
+Sort the array first. Similar as 3 sum. Fix first value, use two pointers track the rest two values.
+
 ## Solution
 
 ```cpp

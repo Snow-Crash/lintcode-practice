@@ -6,8 +6,6 @@ Header: algorithm
 
 ## isdigit()
 
-
-
 ## isalpha
 
 ```cpp
@@ -17,10 +15,17 @@ int isalpha ( int c );
 
 Check if character is alphabetic
 
-
 ## min() and max()
 
 Header: algorithm
+
+## Change sort() order
+
+sort() default order is non-descending. To change to descending order:
+
+```cpp
+std::sort(s.begin(), s.end(), std::greater<int>());
+```
 
 ## Custom Sort Function
 
@@ -60,6 +65,14 @@ struct comp
 };
 
 priority_queue<vector<int>, vector<vector<int>>, comp> q;
+```
+
+## Min heap
+
+priority_queue is max heap by default, to make it a min heap
+
+```cpp
+priority_queue<int,vector<int>,greater<int> >pq;
 ```
 
 ## Split String
